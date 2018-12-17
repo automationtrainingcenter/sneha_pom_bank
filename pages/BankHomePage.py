@@ -18,3 +18,6 @@ class BankHomePage:
 
     def click_login(self):
         self.driver.find_element_by_id(self.login).click()
+
+    def is_login_displayed(self):
+        self.driver.find_element_by_id(self.login).is_displayed()

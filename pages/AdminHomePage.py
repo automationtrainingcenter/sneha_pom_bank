@@ -22,3 +22,6 @@ class AdminHomePage:
 
     def click_home_button(self):
         self.driver.find_element_by_xpath(self.homeButton).click()
+
+    def is_Logout_displayed(self):
+       return self.driver.find_element_by_xpath(self.logoutButton).is_displayed()

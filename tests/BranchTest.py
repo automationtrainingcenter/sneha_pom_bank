@@ -35,7 +35,7 @@ class BranchCreationTest(unittest.TestCase):
 
     # login test
     def test_01_login(self):
-        self.assertTrue(self.admin_home_page.logoutButton.is_displayed(), "login test passed")
+        self.assertTrue(self.admin_home_page.is_Logout_displayed(), "login test passed")
 
     def test_02_branch_creation(self):
         self.admin_home_page.click_branches_button()
@@ -58,7 +58,7 @@ class BranchCreationTest(unittest.TestCase):
         self.admin_home_page.click_branches_button()
         self.branch_details_page.click_new_branches_button()
         self.branch_creation_page.click_cancel_button()
-        self.assertTrue(self.branch_details_page.newbranchButton.is_displayed())
+        self.assertTrue(self.branch_details_page.is_new_branch_displayed(), "branch creation cancel test is passed")
 
     def test_05_branch_creation_data_driven(self):
         excel.open_workbook('E:\SMIT\sneha\sneha_bank\TestData.xlsx','BranchData')
@@ -83,7 +83,7 @@ class BranchCreationTest(unittest.TestCase):
         self.admin_home_page = AdminHomePage(self.driver)
         self.admin_home_page.click_logout_button()
         self.bank_home_page = BankHomePage(self.driver)
-        self.assertTrue(self.bank_home_page.login.is_displayed(), "logout test passed")
+        self.assertTrue(self.bank_home_page.is_login_displayed(), "logout test passed")
 
     # test fixture
     def tearDown(self):
